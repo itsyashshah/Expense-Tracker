@@ -4,6 +4,7 @@ import Form from './Form/Form'
 import List from './List/List'
 import useStyles from './styles'
 import {ExpenseTrackerContext} from '../../context/context'
+import InfoCard from '../../components/InfoCard'
 const Main = () => {
     const classes = useStyles();
     const { balance } = useContext(ExpenseTrackerContext);
@@ -13,10 +14,10 @@ const Main = () => {
             <CardHeader title="Expense Tracker"/>
             <CardContent>
                 <Typography align="center" variant="h5"> Total Balance ${balance}</Typography>
-                <Typography variant="subtitle1" style={{lineHeight:"1.5em", marginTop:"20px"}}> </Typography>
-                {/* InfoCard */}
-                Try Saying : Add income $100
-                <Divider />
+                <Typography variant="subtitle1" style={{lineHeight:"1.5em", marginTop:"20px"}}> 
+                <InfoCard />
+                </Typography>
+                <Divider className={classes.divider}/>
                 <Form/>
             </CardContent>
             <CardContent className={classes.cartContent}>
